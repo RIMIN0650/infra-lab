@@ -23,4 +23,20 @@ public class BoardDto {
         }
     }
 
+    @Getter
+    @Builder
+    public static class BoardReqRes {
+        private Long id;
+        private String title;
+        private String contents;
+
+        public static BoardDto.BoardReqRes from(Board entity) {
+            return BoardReqRes.builder()
+                    .id(entity.getId())
+                    .title(entity.getTitle())
+                    .contents(entity.getContents())
+                    .build();
+        }
+    }
+
 }
