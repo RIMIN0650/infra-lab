@@ -24,3 +24,9 @@ services:
       - DB_PASS=${DB_PASS}
     depends_on:
       - db
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
